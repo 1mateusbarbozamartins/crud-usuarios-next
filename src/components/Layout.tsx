@@ -1,8 +1,9 @@
+import { ReactNode } from "react"
 import Titulo from "./Titulo"
 
 interface LayoutProps {
     titulo: string
-    children: any
+    children: ReactNode
 }
 
 export default function Layout(props: LayoutProps) {

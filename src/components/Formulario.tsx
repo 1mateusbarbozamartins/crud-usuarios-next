@@ -14,6 +14,14 @@ export default function Formulario(props: FormularioProps) {
     const [nome, setNome] = useState(props.cliente?.nome ?? '')
     const [idade, setIdade] = useState(props.cliente?.idade ?? 0)
 
+    const handleNomeChange = (valor: string | number) => {
+        setNome(valor.toString());
+    };
+
+    const handleIdadeChange = (valor: string | number) => {
+        setIdade(Number(valor));
+    };
+
     return (
         <div>
             {id ? (
@@ -28,7 +36,7 @@ export default function Formulario(props: FormularioProps) {
             <Entrada 
                 texto="Nome" 
                 valor={nome}
-                valorMudou={setNome}
+                valorMudou={handleNomeChange}
                 className="mb-5"
             />
 
@@ -36,7 +44,7 @@ export default function Formulario(props: FormularioProps) {
                 texto="Idade" 
                 tipo="number" 
                 valor={idade} 
-                valorMudou={setIdade}
+                valorMudou={handleIdadeChange}
             />
 
             <div className="flex justify-end mt-7">

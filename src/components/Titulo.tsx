@@ -1,5 +1,7 @@
+import { ReactNode } from "react"
+
 interface TituloProps {
-    children: any
+    children: ReactNode
 }
 
 export default function Titulo(props: TituloProps) {

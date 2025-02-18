@@ -31,12 +31,12 @@ export default class ColecaoCliente implements ClienteRepositorio {
         } else {
             const docRef = await addDoc(this.colecao(), cliente);
             const docSnap = await getDoc(docRef);
-            return new Cliente(docSnap.data()?.nome, docSnap.data()?.idade, docSnap.id);
+            return new Cliente(docSnap.data()?.nome ?? '', docSnap.data()?.idade ?? 0, docSnap.id);
         }
     }
 
     async excluir(cliente: Cliente): Promise<void> {
-        await deleteDoc(doc(this.colecao(), cliente.id));
+        await deleteDoc(doc(this.colecao(), cliente.id ?? ''));
     }
 
     async obterTodos(): Promise<Cliente[]> {

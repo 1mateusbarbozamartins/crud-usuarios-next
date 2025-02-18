@@ -1,10 +1,10 @@
 interface EntradaProps {
     tipo?: 'text' | 'number';
     texto: string;
-    valor: any;
+    valor: string | number;
     somenteLeitura?: boolean;
     className?: string;
-    valorMudou?: (valor: any) => void;
+    valorMudou?: (valor: string | number) => void;
 }
 
 export default function Entrada(props: EntradaProps) {

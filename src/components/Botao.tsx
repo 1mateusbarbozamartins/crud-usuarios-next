@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 
 interface BotaoProps {
     cor?: 'green' | 'blue' | 'gray';
     className?: string;
-    children: any;
+    children: ReactNode;
     onClick?: () => void;
 }
 
